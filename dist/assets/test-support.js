@@ -5701,9 +5701,9 @@ define("@ember/test-helpers/setup-rendering-context", ["exports", "@ember/runloo
     {{outlet}}
   */
   {
-    "id": "Nd8/13CF",
+    "id": "14ppL+o5",
     "block": "[[[46,[28,[37,1],null,null],null,null,null]],[],false,[\"component\",\"-outlet\"]]",
-    "moduleName": "/home/andreo/hackathon/frontend-say-hackathon-w1-g2/frontend-say-hackathon-w1-g2/@ember/test-helpers/setup-rendering-context.js",
+    "moduleName": "/home/andreo/hackathon/frontend-say-hackathon-w1-g2/@ember/test-helpers/setup-rendering-context.js",
     "isStrictMode": false
   });
   const EMPTY_TEMPLATE = (0, _templateFactory.createTemplateFactory)(
@@ -5711,9 +5711,9 @@ define("@ember/test-helpers/setup-rendering-context", ["exports", "@ember/runloo
     
   */
   {
-    "id": "OOPtHtfn",
+    "id": "50WcVJWe",
     "block": "[[],[],false,[]]",
-    "moduleName": "/home/andreo/hackathon/frontend-say-hackathon-w1-g2/frontend-say-hackathon-w1-g2/@ember/test-helpers/setup-rendering-context.js",
+    "moduleName": "/home/andreo/hackathon/frontend-say-hackathon-w1-g2/@ember/test-helpers/setup-rendering-context.js",
     "isStrictMode": false
   });
   const INVOKE_PROVIDED_COMPONENT = (0, _templateFactory.createTemplateFactory)(
@@ -5721,9 +5721,9 @@ define("@ember/test-helpers/setup-rendering-context", ["exports", "@ember/runloo
     <this.ProvidedComponent />
   */
   {
-    "id": "GA2yR3BA",
+    "id": "dF00mNvO",
     "block": "[[[8,[30,0,[\"ProvidedComponent\"]],null,null,null]],[],false,[]]",
-    "moduleName": "/home/andreo/hackathon/frontend-say-hackathon-w1-g2/frontend-say-hackathon-w1-g2/@ember/test-helpers/setup-rendering-context.js",
+    "moduleName": "/home/andreo/hackathon/frontend-say-hackathon-w1-g2/@ember/test-helpers/setup-rendering-context.js",
     "isStrictMode": false
   });
   const hasCalledSetupRenderingContext = Symbol();
