@@ -1,17 +1,23 @@
-{{#if this.showEnvironment}}
-  {{page-title (concat this.environmentName)}}
-{{/if}}
-<AuApp>
+{{page-title
+  (concat
+    "Organisatie Portaal"
+    (if this.showEnvironment (concat " - " this.environmentName))
+  )
+}}
+
+<AuModalContainer />
+
+<AuApp class="{{if this.showEnvironment 'au-c-app--environment'}}">
 
   <Header />
-  {{#if this.session.isAuthenticated}}{{/if}}
-  <AuMainContainer class="au-u-flex" as |m|>
-    <m.content @scroll={{true}}>
-      <AuBodyContainer @scroll={{true}}>
-        {{outlet}}
-      </AuBodyContainer>
-    </m.content>
-  </AuMainContainer>
+
+  <main id="main" class="au-c-main-container">
+    <div
+      class="au-c-main-container__content au-c-main-container__content--scroll"
+      id="content"
+      tabindex="-1"
+    >
+      {{outlet}}
+    </div>
+  </main>
 </AuApp>
-<AuModalContainer />
-<AuToaster />
