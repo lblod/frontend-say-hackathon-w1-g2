@@ -12,8 +12,7 @@ export default class LawDocumentComponent extends Component {
     const response = yield fetch(
       `https://codex.opendata.api.vlaanderen.be/api/WetgevingDocument/Zoeken?zoekTerm=${searchData}`
     );
-    const jsonResponse = yield response.json();
-    const suggestions = jsonResponse.ResultatenLijst;
+    const suggestions = yield response.json();
 
     return suggestions.ResultatenLijst;
   }
