@@ -12,14 +12,17 @@
     </p>
     <ul class="au-c-list-horizontal">
       <li class="au-c-list-horizontal__item">
-        <AuLink @route="auth.login" @skin="secondary">Disclaimer</AuLink>
-      </li>
-      <li class="au-c-list-horizontal__item">
-        <AuLink @route="auth.login" @skin="secondary">Cookieverklaring</AuLink>
+        <AuLink @route="auth.mock-login" @skin="secondary">Disclaimer</AuLink>
       </li>
       <li class="au-c-list-horizontal__item">
         <AuLink
-          @route="auth.login"
+          @route="auth.mock-login"
+          @skin="secondary"
+        >Cookieverklaring</AuLink>
+      </li>
+      <li class="au-c-list-horizontal__item">
+        <AuLink
+          @route="auth.mock-login"
           @skin="secondary"
         >Toegankelijkheidsverklaring</AuLink>
       </li>
