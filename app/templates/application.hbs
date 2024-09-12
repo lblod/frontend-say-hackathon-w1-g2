@@ -6,13 +6,11 @@
 
   <Header />
 
-  <main id="main" class="au-c-main-container">
-    <div
-      class="au-c-main-container__content au-c-main-container__content--scroll"
-      id="content"
-      tabindex="-1"
-    >
-      {{outlet}}
-    </div>
-  </main>
+  <AuMainContainer class="au-u-flex" as |m|>
+    <m.content @scroll={{true}}>
+      <AuBodyContainer @scroll={{true}}>
+        {{outlet}}
+      </AuBodyContainer>
+    </m.content>
+  </AuMainContainer>
 </AuApp>
