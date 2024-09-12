@@ -1,6 +1,6 @@
-import Route from "@ember/routing/route";
-import { inject as service } from "@ember/service";
-import { warn } from "@ember/debug";
+import Route from '@ember/routing/route';
+import { inject as service } from '@ember/service';
+import { warn } from '@ember/debug';
 
 export default class ApplicationRoute extends Route {
   @service currentSession;
@@ -18,8 +18,8 @@ export default class ApplicationRoute extends Route {
       await this.currentSession.load();
     } catch (error) {
       console.error(error);
-      warn(error, { id: "current-session-load-failure" });
-      this.router.transitionTo("login");
+      warn(error, { id: 'current-session-load-failure' });
+      this.router.transitionTo('login');
     }
   }
 }

@@ -18,17 +18,16 @@
   <li class="au-c-list-horizontal__item">
     {{#if this.session.isAuthenticated}}
       <AuDropdown
-        @title="{{this.currentSession.group.classification.label}}
-         {{this.currentSession.group.name}}"
+        @title="{{this.currentSession.user.firstName}} {{this.currentSession.user.familyName}}"
         @buttonLabel="Account settings"
         @alignment="right"
         role="menu"
       >
-        {{#unless this.session.isControllerLoginSession}}
-          <AuLink role="menuitem" @route="auth.switch" @icon="switch">
-            Wissel van bestuurseenheid
-          </AuLink>
-        {{/unless}}
+
+        <AuLink role="menuitem" @route="auth.switch" @icon="switch">
+          Wissel van gebruiker
+        </AuLink>
+
         <AuLink @route="auth.logout" @icon="logout" role="menuitem">
           Afmelden
         </AuLink>

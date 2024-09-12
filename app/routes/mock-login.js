@@ -11,8 +11,11 @@ export default class MockLoginRoute extends Route {
     },
   };
 
-  beforeModel() {
-    this.session.prohibitAuthentication('index');
+  async beforeModel() {
+    if (this.session.isAuthenticated) {
+      await this.currentSession.load();
+      this.session.prohibitAuthentication('index');
+    }
   }
 
   async model(params) {

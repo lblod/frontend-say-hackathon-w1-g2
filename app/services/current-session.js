@@ -11,7 +11,6 @@ export default class CurrentSessionService extends Service {
    * Is actually administrative unit associated with this user
    */
   @tracked group;
-  @tracked groupClassification;
   @tracked roles = [];
 
   async load() {
@@ -25,10 +24,7 @@ export default class CurrentSessionService extends Service {
       this.roles = this.session.data.authenticated.data.attributes.roles;
 
       let groupId = this.session.data.authenticated.relationships.group.data.id;
-      this.group = await this.store.findRecord('administrative-unit', groupId, {
-        include: 'classification',
-      });
-      this.groupClassification = await this.group.classification;
+      this.group = await this.store.findRecord('group', groupId, {});
     }
   }
   get canEdit() {
