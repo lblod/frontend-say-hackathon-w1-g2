@@ -1,3 +1,17 @@
-{{page-title "FrontendSayHackathonW1G2"}}
+{{#if this.showEnvironment}}
+  {{page-title (concat this.environmentName)}}
+{{/if}}
+<AuApp>
 
-{{outlet}}
+  <Header />
+  {{#if this.session.isAuthenticated}}{{/if}}
+  <AuMainContainer class="au-u-flex" as |m|>
+    <m.content @scroll={{true}}>
+      <AuBodyContainer @scroll={{true}}>
+        {{outlet}}
+      </AuBodyContainer>
+    </m.content>
+  </AuMainContainer>
+</AuApp>
+<AuModalContainer />
+<AuToaster />
