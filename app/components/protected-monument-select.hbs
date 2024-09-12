@@ -1,0 +1,24 @@
+Search for protected monuments
+
+<PowerSelect
+  @searchEnabled={{true}}
+  @search={{perform this.search}}
+  @selected={{this.selected}}
+  @searchField="name"
+  @loadingMessage="Loading..."
+  @searchEnabled={{true}}
+  @noMatchesMessage="No results"
+  @searchMessage="Type to search"
+  @onChange={{fn (mut this.selected)}} as |suggestion|>
+    {{suggestion.naam}} - {{suggestion.locatie_samenvatting}}
+</PowerSelect>
+
+{{#if this.selected}}
+  The following classified building has been selected:
+  <li>
+    <ul>Name: {{this.selected.naam}}</ul>
+    <ul>Description: {{this.selected.korte_beschrijving}}</ul>
+    <ul>Location: {{this.selected.locatie_samenvatting}}</ul>
+    <ul>City: {{this.selected.gemeente_samenvatting}}</ul>
+  </li>
+{{/if}}
