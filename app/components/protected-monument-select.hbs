@@ -1,4 +1,4 @@
-Enter a city name to see its 10 first protected monuments
+Search for protected monuments
 
 <PowerSelect
   @searchEnabled={{true}}
@@ -10,7 +10,7 @@ Enter a city name to see its 10 first protected monuments
   @noMatchesMessage="No results"
   @searchMessage="Type to search"
   @onChange={{fn (mut this.selected)}} as |suggestion|>
-    {{suggestion.naam}}
+    {{suggestion.naam}} - {{suggestion.locatie_samenvatting}}
 </PowerSelect>
 
 {{#if this.selected}}
