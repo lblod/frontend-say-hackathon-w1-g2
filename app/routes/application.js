@@ -16,7 +16,6 @@ export default class ApplicationRoute extends Route {
   async _loadCurrentSession() {
     try {
       await this.currentSession.load();
-      console.log("this.currentSession", this.currentSession);
     } catch (error) {
       console.error(error);
       warn(error, { id: "current-session-load-failure" });
