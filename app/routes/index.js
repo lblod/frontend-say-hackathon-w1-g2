@@ -5,7 +5,7 @@ export default class IndexRoute extends Route {
   @service router;
   @service currentSession;
   async beforeModel(transition) {
-    this.session.requireAuthentication(transition, 'login');
+    this.session.requireAuthentication(transition, 'index');
     if (this.session.isAuthenticated) {
       await this.currentSession.load();
       this.router.transitionTo('requests');
