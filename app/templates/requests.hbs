@@ -1,5 +1,5 @@
 {{page-title "Requests"}}
-<section class="au-o-layout au-o-region-large">
+{{! <section class="au-o-layout au-o-region-large">
   <div class="au-o-grid au-o-grid--small">
     <div class="au-o-grid__item">
       <AuContent @skin="large">
@@ -7,4 +7,69 @@
       </AuContent>
     </div>
   </div>
-</section>
+</section> }}
+
+<AuDataTable
+  @content={{this.requests}}
+  @page={{this.page}}
+  @fields="title description"
+  @noDataMessage="Geen documenten"
+  @sort={{this.sort}}
+  as |t|
+>
+  <t.menu as |menu|>
+    <menu.general>
+      <AuToolbar class="au-o-box" as |Group|>
+        <Group>
+          <AuHeading @skin="2">
+            Aanvragen
+          </AuHeading>
+        </Group>
+        <Group class="au-c-toolbar__group--center">
+          <AuButton @skin="secondary" @icon="filter">Filter aanvragen</AuButton>
+          <AuButton>
+            Nieuwe aanvraag
+          </AuButton>
+        </Group>
+      </AuToolbar>
+    </menu.general>
+  </t.menu>
+  <t.content as |c|>
+    <c.header>
+      <AuDataTableThSortable
+        @field="title"
+        @currentSorting={{this.sort}}
+        @label="Titel aanvraag"
+        @class="data-table__header-title"
+      />
+      <AuDataTableThSortable
+        @field="description"
+        @currentSorting={{this.sort}}
+        @label="Datum aanvraag"
+        @class="data-table__header-title"
+      />
+      <AuDataTableThSortable
+        @field="description"
+        @currentSorting={{this.sort}}
+        @label="Status"
+        @class="data-table__header-title"
+      />
+      <AuDataTableThSortable
+        @field="description"
+        @currentSorting={{this.sort}}
+        @label="Beheerd door"
+        @class="data-table__header-title"
+      />
+      <AuDataTableThSortable
+        @field="description"
+        @currentSorting={{this.sort}}
+        @label="Laatst gewijzigd"
+        @class="data-table__header-title"
+      />
+    </c.header>
+    <c.body as |row|>
+      <td>{{row.title}}</td>
+      <td>{{row.description}}</td>
+    </c.body>
+  </t.content>
+</AuDataTable>
