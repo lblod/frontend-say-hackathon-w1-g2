@@ -1,0 +1,153 @@
+<section>
+  <Detail::Header
+    @title="Kasteel van Laarne"
+    @code="2024_CBS_08075"
+    @status="Submitted"
+    @overviewLink="requests"
+    @modelId={{1}}
+  />
+
+  <section class="page">
+    <Detail::Card
+      @header="Overzicht"
+      @actionLabel="Bewerk"
+      @actionIcon="pencil"
+      @columns={{array
+        (hash label="Applicatie ID" value="2024_CBS_08075")
+        (hash label="Startdatum" value="01-01-2025")
+        (hash label="Einddatum" value="01-01-2025")
+      }}
+    />
+
+    <Detail::List
+      @header="Properties"
+      @actionLabel="Voeg eigendom toe"
+      @actionIcon="plus"
+      @actions={{array
+        (hash label="" icon="pencil")
+        (hash label="" icon="bin" alert="true")
+      }}
+      @columns={{array
+        (hash
+          label="Name"
+          items=(array
+            (hash
+              label=""
+              value="Kasteel van Laarne"
+              actionLabel="Bewerk"
+              actionIcon="pencil"
+            )
+            (hash
+              label=""
+              value="Kasteel van Laarne2"
+              actionLabel="Bewerk"
+              actionIcon="pencil"
+            )
+          )
+        )
+        (hash
+          label="Address"
+          items=(array
+            (hash
+              label=""
+              value="Kasteel van Laarne"
+              actionLabel="Bewerk"
+              actionIcon="pencil"
+            )
+            (hash
+              label=""
+              value="Kasteel van Laarne 2"
+              actionLabel="Bewerk"
+              actionIcon="pencil"
+            )
+          )
+        )
+        (hash
+          label="Cadastral data"
+          items=(array
+            (hash
+              label=""
+              value="Kasteel van Laarne"
+              actionLabel="Bewerk"
+              actionIcon="pencil"
+            )
+            (hash
+              label=""
+              value="Kasteel van Laarne 2"
+              actionLabel="Bewerk"
+              actionIcon="pencil"
+            )
+          )
+        )
+      }}
+    />
+
+    <Detail::Card
+      @header="Beschrijving"
+      @actionLabel="Bewerk"
+      @actionIcon="pencil"
+      @columns={{array
+        (hash value="Vernieuwen waterleiding voor poortgebouw en kasteel.")
+      }}
+    />
+
+    <Detail::Card
+      @header="Persoonlijke informatie"
+      @actionLabel="Bewerk"
+      @actionIcon="pencil"
+      @contentHasAction="true"
+      @columns={{array
+        (hash
+          items=(array
+            (hash label="First - & last name" value="John Doe")
+            (hash label="Address" value="Eekhoekstraat 5")
+            (hash label="Name of organisation" value="John Doe")
+          )
+        )
+        (hash
+          items=(array
+            (hash label="National register number" value="00.01.01-123.45")
+            (hash label="Zip code" value="9270")
+            (hash label="Stad" value="Laarne")
+          )
+        )
+        (hash
+          items=(array
+            (hash label="KBO-number" value="Eekhoekstraat 5")
+            (hash label="Telephone number" value="0400/223344")
+          )
+        )
+        (hash items=(array (hash label="E-mail" value="john.doe@gmail.com")))
+      }}
+    />
+
+    <Detail::Card
+      @header="Contact informatie"
+      @actionLabel="Bewerk"
+      @actionIcon="pencil"
+      @contentHasAction="true"
+      @columns={{array
+        (hash
+          items=(array
+            (hash label="First - & last name" value="John Doe")
+            (hash label="Address" value="Eekhoekstraat 5")
+          )
+        )
+        (hash
+          items=(array
+            (hash label="National register number" value="00.01.01-123.45")
+            (hash label="Zip code" value="9270")
+            (hash label="Stad" value="Laarne")
+          )
+        )
+        (hash
+          items=(array
+            (hash label="KBO-number" value="Eekhoekstraat 5")
+            (hash label="Telephone number" value="0400/223344")
+          )
+        )
+        (hash items=(array (hash label="E-mail" value="john.doe@gmail.com")))
+      }}
+    />
+  </section>
+</section>

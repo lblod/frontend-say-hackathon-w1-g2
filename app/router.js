@@ -15,7 +15,9 @@ Router.map(function () {
 
   this.route('mock-login');
   this.route('login');
-  this.route('requests');
+  this.route('requests', { path: '/overzicht' });
+  this.route('detail', { path: 'detail/:id' });
+  this.route('attachments', { path: 'detail/:id/bestanden' });
   this.route('404', {
     path: '/*wildcard',
   });

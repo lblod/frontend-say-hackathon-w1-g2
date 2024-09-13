@@ -1,10 +1,10 @@
-import Service from "@ember/service";
-import fetch from "fetch";
-import { tracked } from "@glimmer/tracking";
+import Service from '@ember/service';
+import fetch from 'fetch';
+import { tracked } from '@glimmer/tracking';
 
-const GET_ACTIVE_ROLE_ENDPOINT = "/active-role/current";
-const DESTROY_ACTIVE_ROLE_ENDPOINT = "/active-role/destroy";
-const UPDATE_ACTIVE_ROLE_ENDPOINT = "/active-role/update";
+const GET_ACTIVE_ROLE_ENDPOINT = '/active-role/current';
+const DESTROY_ACTIVE_ROLE_ENDPOINT = '/active-role/destroy';
+const UPDATE_ACTIVE_ROLE_ENDPOINT = '/active-role/update';
 
 export default class RoleService extends Service {
   @tracked _activeRole;
@@ -15,10 +15,10 @@ export default class RoleService extends Service {
         return;
       }
       const resp = await fetch(GET_ACTIVE_ROLE_ENDPOINT, {
-        method: "GET",
+        method: 'GET',
         headers: {
-          Accept: "application/vnd.api+json",
-          "Content-Type": "application/vnd.api+json",
+          Accept: 'application/vnd.api+json',
+          'Content-Type': 'application/vnd.api+json',
         },
         body: null,
       });
@@ -33,10 +33,10 @@ export default class RoleService extends Service {
     this._activeRole = null;
     try {
       await fetch(DESTROY_ACTIVE_ROLE_ENDPOINT, {
-        method: "POST",
+        method: 'POST',
         headers: {
-          Accept: "application/vnd.api+json",
-          "Content-Type": "application/vnd.api+json",
+          Accept: 'application/vnd.api+json',
+          'Content-Type': 'application/vnd.api+json',
         },
         body: null,
       });
@@ -47,10 +47,10 @@ export default class RoleService extends Service {
 
   async updateActiveRole(role) {
     const resp = await fetch(`${UPDATE_ACTIVE_ROLE_ENDPOINT}?role=${role}`, {
-      method: "POST",
+      method: 'POST',
       headers: {
-        Accept: "application/vnd.api+json",
-        "Content-Type": "application/vnd.api+json",
+        Accept: 'application/vnd.api+json',
+        'Content-Type': 'application/vnd.api+json',
       },
       body: null,
     });
