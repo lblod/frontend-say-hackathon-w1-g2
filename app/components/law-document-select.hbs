@@ -1,0 +1,21 @@
+Search for laws from the Vlaamse Codex
+
+<PowerSelect
+  @searchEnabled={{true}}
+  @search={{perform this.search}}
+  @selected={{this.selected}}
+  @loadingMessage="Loading..."
+  @searchEnabled={{true}}
+  @noMatchesMessage="No results"
+  @searchMessage="Type to search"
+  @onChange={{fn (mut this.selected)}} as |suggestion|>
+    {{suggestion.Opschrift}}
+</PowerSelect>
+
+{{#if this.selected}}
+  The following law has been selected:
+  <li>
+    <ul>Description: {{this.selected.Opschrift}}</ul>
+    <ul>ID: {{this.selected.Id}}</ul>
+  </li>
+{{/if}}
