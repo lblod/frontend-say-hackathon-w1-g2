@@ -1,11 +1,10 @@
 {{page-title "Detail"}}
 <section>
   <Detail::Header
-    @title="Kasteel van Laarne"
-    @code="2024_CBS_08075"
+    @title={{this.model.designationObject.locationElementParcel.name}}
+    @code={{this.model.id}}
     @status="Submitted"
-    @overviewLink="requests"
-    @modelId={{1}}
+    @modelId={{this.model.id}}
   />
 
 </section>

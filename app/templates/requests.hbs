@@ -59,7 +59,11 @@
       />
     </c.header>
     <c.body as |row|>
-      <td>{{row.designationObject.locationElementParcel.name}}</td>
+      <td><AuLink
+          @skin="primary"
+          @route="detail"
+          @model={{row}}
+        >{{row.designationObject.locationElementParcel.name}}</AuLink></td>
       <td>{{row.submittedOn}}</td>
       <td><AuPill
           @skin={{this.getPillSkin row.status}}
