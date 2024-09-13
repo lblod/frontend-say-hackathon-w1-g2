@@ -1,16 +1,5 @@
 {{page-title "Requests"}}
-{{! <section class="au-o-layout au-o-region-large">
-  <div class="au-o-grid au-o-grid--small">
-    <div class="au-o-grid__item">
-      <AuContent @skin="large">
-        <h1>Application dashboard</h1>
 
-        <ProtectedMonumentSelect @selectedMonument={{this.selectedMonument}} />
-        <LawDocumentSelect @selectedMonument={{this.selectedLaw}} />
-      </AuContent>
-    </div>
-  </div>
-</section> }}
 <AuDataTable
   @content={{this.model.requests}}
   @page={{this.page}}
@@ -76,7 +65,7 @@
           @skin={{this.getPillSkin row.status}}
         >{{row.status}}</AuPill></td>
       <td>{{this.currentSession}}</td>
+      <td>{{row.modifiedOn}}</td>
     </c.body>
   </t.content>
 </AuDataTable>
-{{log @currentSession}}
