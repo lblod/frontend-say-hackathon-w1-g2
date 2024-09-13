@@ -8,12 +8,11 @@
     </div>
   </div>
 </section> }}
-
 <AuDataTable
-  @content={{this.requests}}
+  @content={{this.model.requests}}
   @page={{this.page}}
   @fields="title description"
-  @noDataMessage="Geen documenten"
+  @noDataMessage="Geen aanvragen"
   @sort={{this.sort}}
   as |t|
 >
