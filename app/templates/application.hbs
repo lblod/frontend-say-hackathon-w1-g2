@@ -1,6 +1,17 @@
-{{page-title "FrontendSayHackathonW1G2"}}
+{{page-title "Hackathon Group 2"}}
 
+<AuModalContainer />
 
-<ProtectedMonumentSelect @selectedMonument={{this.selectedMonument}}/>
+<AuApp class="{{if this.showEnvironment 'au-c-app--environment'}}">
 
-{{outlet}}
+  <Header />
+
+  <AuMainContainer class="au-u-flex" as |m|>
+    <m.content @scroll={{true}}>
+      <AuBodyContainer @scroll={{true}}>
+		<ProtectedMonumentSelect @selectedMonument={{this.selectedMonument}}/>
+        {{outlet}}
+      </AuBodyContainer>
+    </m.content>
+  </AuMainContainer>
+</AuApp>
