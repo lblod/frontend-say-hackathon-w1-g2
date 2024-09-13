@@ -18,6 +18,7 @@ Router.map(function () {
   this.route('requests', { path: '/overzicht' });
   this.route('detail', { path: 'detail/:id' });
   this.route('attachments', { path: 'detail/:id/bestanden' });
+  this.route('handling', { path: 'detail/:id/handling' });
   this.route('404', {
     path: '/*wildcard',
   });

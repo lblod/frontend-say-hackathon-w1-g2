@@ -1,0 +1,63 @@
+{{page-title "Handling"}}
+<section>
+  <Detail::Header
+    @title="Kasteel van Laarne"
+    @code="2024_CBS_08075"
+    @status="Submitted"
+    @overviewLink="requests"
+    @modelId={{1}}
+  />
+
+  <section class="page">
+    <ProtectedMonumentSelect @selected={{this.selectedMonument}} />
+
+    {{#if this.selectedMonument}}
+      <Detail::Card
+        @header="Retrieved properties"
+        @actionLabel="Bewerk"
+        @actionIcon="pencil"
+        @columns={{array
+          (hash
+            items=(array
+              (hash label="Name" value=this.selectedMonument.naam)
+              (hash label="Is protected" value=this.selectedMonument.erfgoedwaarde)
+              (hash label="Location" value=this.selectedMonument.locatie_samenvatting)
+            )
+          )
+          (hash
+            items=(array
+              (hash label="Description" value=this.selectedMonument.korte_beschrijving)
+            )
+          )
+          (hash
+            items=(array
+              (hash label="Data manager" value=this.selectedMonument.dataverantwoordelijke.omschrijving)
+            )
+          )
+        }}
+      />
+
+      <article class="card-container">
+        <div class="card-header">
+          <h4>Features of the building</h4>
+        </div>
+        <div class="au-u-flex card-content">
+          <ul>
+            {{#each this.selectedMonument.kenmerkgroepen as |kenmerkgroepen|}}
+              {{#each kenmerkgroepen.thesaurus as |thesaurus|}}
+                <li>
+                  <AuLinkExternal href="{{thesaurus.uri}}" target="_blank">{{thesaurus.label}}</AuLinkExternal>
+                </li>
+              {{/each}}
+            {{/each}}
+          </ul>
+        </div>
+      </article>
+    {{/if}}
+  </section>
+
+  <section class="page">
+    <LawDocumentSelect @selectedMonument={{this.selectedLaw}} />
+  </section>
+
+</section>
