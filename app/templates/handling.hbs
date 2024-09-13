@@ -1,11 +1,10 @@
 {{page-title "Handling"}}
 <section>
   <Detail::Header
-    @title="Kasteel van Laarne"
-    @code="2024_CBS_08075"
+    @title={{this.model.designationObject.locationElementParcel.name}}
+    @code={{this.model.id}}
     @status="Submitted"
-    @overviewLink="requests"
-    @modelId={{1}}
+    @modelId={{this.model.id}}
   />
 
   <section class="page">
@@ -20,18 +19,29 @@
           (hash
             items=(array
               (hash label="Name" value=this.selectedMonument.naam)
-              (hash label="Is protected" value=this.selectedMonument.erfgoedwaarde)
-              (hash label="Location" value=this.selectedMonument.locatie_samenvatting)
+              (hash
+                label="Is protected" value=this.selectedMonument.erfgoedwaarde
+              )
+              (hash
+                label="Location"
+                value=this.selectedMonument.locatie_samenvatting
+              )
             )
           )
           (hash
             items=(array
-              (hash label="Description" value=this.selectedMonument.korte_beschrijving)
+              (hash
+                label="Description"
+                value=this.selectedMonument.korte_beschrijving
+              )
             )
           )
           (hash
             items=(array
-              (hash label="Data manager" value=this.selectedMonument.dataverantwoordelijke.omschrijving)
+              (hash
+                label="Data manager"
+                value=this.selectedMonument.dataverantwoordelijke.omschrijving
+              )
             )
           )
         }}
@@ -46,7 +56,10 @@
             {{#each this.selectedMonument.kenmerkgroepen as |kenmerkgroepen|}}
               {{#each kenmerkgroepen.thesaurus as |thesaurus|}}
                 <li>
-                  <AuLinkExternal href="{{thesaurus.uri}}" target="_blank">{{thesaurus.label}}</AuLinkExternal>
+                  <AuLinkExternal
+                    href="{{thesaurus.uri}}"
+                    target="_blank"
+                  >{{thesaurus.label}}</AuLinkExternal>
                 </li>
               {{/each}}
             {{/each}}
