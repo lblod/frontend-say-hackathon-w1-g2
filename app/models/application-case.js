@@ -1,6 +1,6 @@
 import { Model, attr, belongsTo } from '@ember-data/model';
 
-export default class LocationElementParcelModel extends Model {
+export default class ApplicationCaseModel extends Model {
   @attr submittedOn;
   @attr modifiedOn;
   @attr status;

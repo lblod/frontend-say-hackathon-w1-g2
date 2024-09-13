@@ -9,8 +9,8 @@ export default class RequestsRoute extends Route {
     this.session.requireAuthentication(transition, 'login');
   }
   async model() {
-    const requests = this.store.findAll('application-case');
-    console.log('requests', requests);
+    const requests = await this.store.findAll('application-case');
+    debugger;
     return {
       requests,
     };
