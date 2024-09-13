@@ -10,7 +10,7 @@ export default class RequestsRoute extends Route {
   }
   async model() {
     const requests = await this.store.findAll('application-case');
-    debugger;
+    console.log('requests', requests);
     return {
       requests,
     };
