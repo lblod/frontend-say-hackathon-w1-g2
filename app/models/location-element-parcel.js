@@ -1,4 +1,4 @@
-import { Model, attr, belongsTo } from '@ember-data/model';
+import Model, { attr, belongsTo } from '@ember-data/model';
 
 export default class LocationElementParcelModel extends Model {
   @attr name;
@@ -6,5 +6,5 @@ export default class LocationElementParcelModel extends Model {
   @attr section;
   @attr number;
 
-  @belongsTo('address', { async: true }) address;
+  @belongsTo('address', { async: true, inverse: null }) address;
 }
