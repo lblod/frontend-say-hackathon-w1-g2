@@ -2,8 +2,9 @@
   <Detail::Header
     @title={{this.model.designationObject.locationElementParcel.name}}
     @code={{this.model.id}}
-    @status="Submitted"
+    @status={{this.model.status}}
     @modelId={{this.model.id}}
+    @user={{this.currentSession}}
   />
 
   <section class="page">

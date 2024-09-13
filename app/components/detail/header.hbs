@@ -1,7 +1,7 @@
 <div class="au-u-flex detail-header">
   <div class="au-u-flex au-u-flex--column">
     <div class="au-u-flex header-content">
-      <h3><strong>{{@title}}</strong> - {{@code}}</h3>
+      <h3><strong>{{@title}}</strong></h3>
       <span class="pill">
         <AuIcon @icon="circle" />
         {{@status}}
@@ -13,7 +13,10 @@
         <AuLink @icon="hierarchal-back" @route="requests">All applications</AuLink>
         <AuLink @route="detail" @model={{@modelId}}>Details</AuLink>
         <AuLink @route="attachments" @model={{@modelId}}>Attachments</AuLink>
-        <AuLink @route="handling" @model="{{@modelId}}">Handling</AuLink>
+        {{log @user.roles}}
+        {{#unless (includes "Hackaton-Editor" @user.roles)}}
+          <AuLink @route="handling" @model="{{@modelId}}">Handling</AuLink>
+        {{/unless}}
       </ul>
     </div>
   </div>
