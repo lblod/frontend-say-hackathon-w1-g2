@@ -6,5 +6,5 @@ export default class LocationElementParcelModel extends Model {
   @attr section;
   @attr number;
 
-  @belongsTo('address', { async: true }) address;
+  @belongsTo('address', { async: true, inverse: null }) address;
 }
