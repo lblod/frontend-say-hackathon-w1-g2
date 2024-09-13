@@ -10,7 +10,7 @@ export default class LawDocumentComponent extends Component {
   *search(searchData) {
     yield timeout(400);
     const response = yield fetch(
-      `https://codex.opendata.api.vlaanderen.be/api/WetgevingDocument/Zoeken?zoekTerm=${searchData}`
+      `https://codex.opendata.api.vlaanderen.be/api/WetgevingDocument/Zoeken?zoekTerm=${searchData}`,
     );
     const suggestions = yield response.json();
 

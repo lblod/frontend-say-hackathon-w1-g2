@@ -1,0 +1,68 @@
+<article class="card-container">
+  <div class="card-header">
+    <h4>{{@header}}</h4>
+    {{#unless @contentHasAction}}
+      <div>
+        {{#if @actionLabel}}
+          <AuLink @skin="primary" @icon={{@actionIcon}}>
+            {{@actionLabel}}
+          </AuLink>
+        {{/if}}
+      </div>
+    {{/unless}}
+  </div>
+
+  <div class="au-u-flex card-content">
+    {{#if (eq (length-of @columns) 1)}}
+      <section class="au-u-flex au-u-flex--column">
+        <div class="card-item">
+          {{#if @columns.[0].label}}
+            <label>{{@columns.[0].label}}</label>
+          {{/if}}
+          <p>{{@columns.[0].value}}</p>
+        </div>
+      </section>
+      {{#if @contentHasAction}}
+        <AuLink @skin="primary" @icon={{@actionIcon}}>
+          {{@actionLabel}}
+        </AuLink>
+      {{/if}}
+    {{else}}
+      <div class="card-columns">
+        {{#each @columns as |column|}}
+          <section class="au-u-flex au-u-flex--column card-column">
+            {{#if column.items}}
+              {{#each column.items as |item|}}
+                <div class="card-item">
+                  {{#if item.label}}
+                    <label>{{item.label}}</label>
+                  {{/if}}
+                  <p>{{item.value}}</p>
+                  {{#if item.actionLabel}}
+                    <AuLink @skin="primary" @icon={{item.actionIcon}}>
+                      {{item.actionLabel}}
+                    </AuLink>
+                  {{/if}}
+                </div>
+              {{/each}}
+            {{else}}
+              <div class="card-item">
+                {{#if column.label}}
+                  <label>{{column.label}}</label>
+                {{/if}}
+                <p>{{column.value}}</p>
+              </div>
+            {{/if}}
+          </section>
+        {{/each}}
+      </div>
+      {{#if @contentHasAction}}
+        <div>
+          <AuLink @skin="primary" @icon={{@actionIcon}}>
+            {{@actionLabel}}
+          </AuLink>
+        </div>
+      {{/if}}
+    {{/if}}
+  </div>
+</article>
