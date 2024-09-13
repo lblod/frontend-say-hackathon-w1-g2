@@ -16,4 +16,17 @@ export default class RequestsController extends Controller {
         return 'default';
     }
   }
+
+  getPillIcon(status) {
+    switch (status.toLowerCase()) {
+      case 'ongoing':
+        return 'circle';
+      case 'completed':
+        return 'circle-check';
+      case 'pending':
+        return 'clock';
+      case 'failed':
+        return 'circle-x';
+    }
+  }
 }
