@@ -17,7 +17,20 @@ export default class ProtectedMonumentSelectComponent extends Component {
       }
     );
     const suggestions = yield response.json();
+    const detailedSuggestions = [];
 
-    return suggestions;
+    for (const suggestion of suggestions) {
+      const responseDetails = yield fetch(
+        `https://inventaris.onroerenderfgoed.be/erfgoedobjecten/${suggestion.id}`, {
+            headers: {
+            'Accept': 'application/json',
+          },
+        }
+      );
+      const details = yield responseDetails.json();
+      detailedSuggestions.push(details);
+    }
+
+    return detailedSuggestions;
   }
 }
