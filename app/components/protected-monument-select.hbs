@@ -13,7 +13,6 @@ Search for protected monuments
 </PowerSelect>
 
 {{#if this.selected}}
-{{log this.selected}}
   The following classified building has been selected:
   <ul>
     <li>Name: {{this.selected.naam}}</li>
@@ -24,11 +23,11 @@ Search for protected monuments
     <li>Features of the building: 
       <ul>
         {{#each this.selected.kenmerkgroepen as |kenmerkgroepen|}}
-        {{#each kenmerkgroepen.thesaurus as |thesaurus|}}
-          <li>
-            <AuLinkExternal href="{{thesaurus.uri}}" target="_blank">{{thesaurus.label}}</AuLinkExternal>
-          </li>
-        {{/each}}
+          {{#each kenmerkgroepen.thesaurus as |thesaurus|}}
+            <li>
+              <AuLinkExternal href="{{thesaurus.uri}}" target="_blank">{{thesaurus.label}}</AuLinkExternal>
+            </li>
+          {{/each}}
         {{/each}}
       </ul>
     </li>
