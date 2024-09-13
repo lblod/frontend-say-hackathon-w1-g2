@@ -11,8 +11,8 @@
     <div class="bread-crumbs">
       <ul>
         <AuLink @icon="hierarchal-back" @route="requests">All applications</AuLink>
-        <AuLink @route="detail" @model="1">Details</AuLink>
-        <AuLink @route="attachments" @model="1">Attachments</AuLink>
+        <AuLink @route="detail" @model={{@modelId}}>Details</AuLink>
+        <AuLink @route="attachments" @model={{@modelId}}>Attachments</AuLink>
       </ul>
     </div>
   </div>

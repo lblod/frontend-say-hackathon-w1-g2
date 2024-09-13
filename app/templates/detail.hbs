@@ -1,10 +1,9 @@
 <section>
   <Detail::Header
-    @title="Kasteel van Laarne"
-    @code="2024_CBS_08075"
+    @title={{this.model.designationObject.locationElementParcel.name}}
+    @code={{this.model.id}}
     @status="Submitted"
-    @overviewLink="requests"
-    @modelId={{1}}
+    @modelId={{this.model.id}}
   />
 
   <section class="page">
@@ -13,7 +12,7 @@
       @actionLabel="Bewerk"
       @actionIcon="pencil"
       @columns={{array
-        (hash label="Applicatie ID" value="2024_CBS_08075")
+        (hash label="Applicatie ID" value=this.model.id)
         (hash label="Startdatum" value="01-01-2025")
         (hash label="Einddatum" value="01-01-2025")
       }}
