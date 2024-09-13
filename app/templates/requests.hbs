@@ -10,9 +10,9 @@
 >
   <t.menu as |menu|>
     <menu.general>
-      <AuToolbar class="au-o-box" as |Group|>
+      <AuToolbar class="au-o-box--small" as |Group|>
         <Group>
-          <AuHeading @skin="2">
+          <AuHeading @skin="4">
             Aanvragen
           </AuHeading>
         </Group>
@@ -67,7 +67,8 @@
       <td>{{row.submittedOn}}</td>
       <td><AuPill
           @skin={{this.getPillSkin row.status}}
-        >{{row.status}}</AuPill></td>
+          @icon={{this.getPillIcon row.status}}
+        >{{this.getPillText row.status}}</AuPill></td>
       <td>{{this.currentSession}}</td>
       <td>{{row.modifiedOn}}</td>
     </c.body>

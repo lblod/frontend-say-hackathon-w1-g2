@@ -11,9 +11,33 @@ export default class RequestsController extends Controller {
       case 'pending':
         return 'warning';
       case 'failed':
-        return 'danger';
-      default:
-        return 'default';
+        return 'error';
+    }
+  }
+
+  getPillIcon(status) {
+    switch (status.toLowerCase()) {
+      case 'ongoing':
+        return 'circle';
+      case 'completed':
+        return 'circle-check';
+      case 'pending':
+        return 'clock';
+      case 'failed':
+        return 'circle-x';
+    }
+  }
+
+  getPillText(status) {
+    switch (status.toLowerCase()) {
+      case 'ongoing':
+        return 'Aangevraagd';
+      case 'completed':
+        return 'Goedgekeurd';
+      case 'pending':
+        return 'In behandeling';
+      case 'failed':
+        return 'Afgewezen';
     }
   }
 }
