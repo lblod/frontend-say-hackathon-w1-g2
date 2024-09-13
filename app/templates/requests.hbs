@@ -67,9 +67,13 @@
       />
     </c.header>
     <c.body as |row|>
-      <td>{{row.description}}</td>
+      <td>{{row.designationObject.locationElementParcel.name}}</td>
       <td>{{row.submittedOn}}</td>
-      <td>{{row.status}}</td>
+      <td><AuPill
+          @skin={{this.getPillSkin row.status}}
+        >{{row.status}}</AuPill></td>
+      <td>{{this.currentSession}}</td>
     </c.body>
   </t.content>
 </AuDataTable>
+{{log @currentSession}}
