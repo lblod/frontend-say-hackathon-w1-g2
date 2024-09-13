@@ -9,6 +9,7 @@
   <AuMainContainer class="au-u-flex" as |m|>
     <m.content @scroll={{true}}>
       <AuBodyContainer @scroll={{true}}>
+		<ProtectedMonumentSelect @selectedMonument={{this.selectedMonument}}/>
         {{outlet}}
       </AuBodyContainer>
     </m.content>
