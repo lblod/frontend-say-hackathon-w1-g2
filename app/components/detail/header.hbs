@@ -1,0 +1,21 @@
+<div class="au-u-flex detail-header">
+  <div class="au-u-flex au-u-flex--column">
+    <div class="au-u-flex header-content">
+      <h3><strong>{{@title}}</strong> - {{@code}}</h3>
+      <span class="pill">
+        <AuIcon @icon="circle" />
+        {{@status}}
+      </span>
+    </div>
+
+    <div class="bread-crumbs">
+      <ul>
+        <AuLink @icon="hierarchal-back" @route="requests">All applications</AuLink>
+        <AuLink @route="detail" @model="1">Details</AuLink>
+        <AuLink @route="attachments" @model="1">Attachments</AuLink>
+      </ul>
+    </div>
+  </div>
+  <AuButton @skin="primary" @alert="true" @icon="bin" @route="overview">Delete
+    application</AuButton>
+</div>

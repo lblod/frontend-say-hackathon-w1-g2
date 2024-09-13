@@ -1,0 +1,56 @@
+<article class="card-container">
+  <div class="card-header">
+    <h4>{{@header}}</h4>
+    {{#unless @contentHasAction}}
+      <div>
+        {{#if @actionLabel}}
+          <AuLink @skin="primary" @icon={{@actionIcon}}>
+            {{@actionLabel}}
+          </AuLink>
+        {{/if}}
+      </div>
+    {{/unless}}
+  </div>
+
+  <div class="au-u-flex card-content detail-table">
+    <table>
+      <thead>
+        <tr>
+          {{#each @columns as |column|}}
+            <th>{{column.label}}</th>
+          {{/each}}
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each @columns.[0].items as |item|}}
+          <tr>
+            {{#each @columns as |column|}}
+              <td>
+                {{#each column.items as |rowItem|}}
+                  {{#if (eq rowItem.value item.value)}}
+                    {{#if rowItem.label}}
+                      <strong>{{rowItem.label}}</strong>:
+                    {{/if}}
+                    {{rowItem.value}}
+                  {{/if}}
+                {{/each}}
+              </td>
+            {{/each}}
+            <td>
+              {{#each @actions as |action|}}
+                <AuButton
+                  @skin="link"
+                  @icon={{action.icon}}
+                  @alert={{action.alert}}
+                >
+                  {{action.label}}
+                </AuButton>
+              {{/each}}
+            </td>
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+</article>

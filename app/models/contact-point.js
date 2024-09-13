@@ -1,4 +1,4 @@
-import { Model, attr } from "@ember-data/model";
+import { Model, attr } from '@ember-data/model';
 
 export default class AddressModel extends Model {
   @attr email;
@@ -7,7 +7,7 @@ export default class AddressModel extends Model {
   @attr website;
   @attr type;
 
-  @belongsTo("address", {
+  @belongsTo('address', {
     async: true,
   })
   contactAddress;

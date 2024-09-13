@@ -1,12 +1,12 @@
-import { inject as service } from "@ember/service";
-import SessionService from "ember-simple-auth/services/session";
+import { inject as service } from '@ember/service';
+import SessionService from 'ember-simple-auth/services/session';
 
 export default class OPSessionService extends SessionService {
   @service currentSession;
 
   get isMockLoginSession() {
     return this.isAuthenticated
-      ? this.data.authenticated.authenticator.includes("mock-login")
+      ? this.data.authenticated.authenticator.includes('mock-login')
       : false;
   }
 
